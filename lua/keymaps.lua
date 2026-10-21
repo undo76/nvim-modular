@@ -64,6 +64,9 @@ vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper win
 vim.keymap.set('i', 'jj', '<Esc>', { desc = 'Enter normal mode' })
 vim.keymap.set('i', 'jk', '<Esc>', { desc = 'Enter normal mode' })
 
+-- Yank full buffer
+vim.keymap.set('n', 'yag', ':%y<CR>', { desc = 'Yank the entire buffer' })
+
 -- [[ Basic Autocommands ]]
 --  See `:help lua-guide-autocommands`
 
