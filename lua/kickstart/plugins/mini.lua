@@ -37,7 +37,7 @@ require('mini.surround').setup()
 --  You could remove this setup call if you don't like it,
 --  and try some other statusline plugin
 local statusline = require 'mini.statusline'
--- Set `use_icons` to true if you have a Nerd Font
+-- Set `use_icons` to true if you havje a Nerd Font
 statusline.setup { use_icons = vim.g.have_nerd_font }
 
 -- You can configure sections in the statusline by overriding their
@@ -45,6 +45,18 @@ statusline.setup { use_icons = vim.g.have_nerd_font }
 -- cursor location to LINE:COLUMN
 ---@diagnostic disable-next-line: duplicate-set-field
 statusline.section_location = function() return '%2l:%-2v' end
+
+-- Mini files explorer
+require('mini.files').setup()
+vim.keymap.set('n', '<leader>mf', function() MiniFiles.open() end, { desc = 'Open [M]ini [F]iles' })
+
+-- Jump find
+require('mini.jump2d').setup {
+  mappings = {
+    start_jumping = '',
+  },
+}
+vim.keymap.set({ 'n', 'v' }, 'f', function() MiniJump2d.start(MiniJump2d.builtin_opts.single_character) end, { desc = 'Jump [F]ind' })
 
 -- ... and there is more!
 --  Check out: https://github.com/nvim-mini/mini.nvim

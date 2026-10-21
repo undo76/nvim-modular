@@ -4,8 +4,12 @@ local function gh(repo) return 'https://github.com/' .. repo end
 vim.pack.add { gh 'folke/which-key.nvim' }
 require('which-key').setup {
   -- Delay between pressing a key and opening which-key (milliseconds)
-  delay = 0,
+  delay = 300,
   icons = { mappings = vim.g.have_nerd_font },
+  win = {
+    border = 'rounded',
+  },
+
   -- Document existing key chains
   spec = {
     { '<leader>s', group = '[S]earch', mode = { 'n', 'v' } },
