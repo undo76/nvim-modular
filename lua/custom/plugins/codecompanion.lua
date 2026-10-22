@@ -53,3 +53,12 @@ require('codecompanion').setup {
 vim.keymap.set({ 'n', 'v' }, '<leader>aa', '<cmd>CodeCompanionActions<CR>', { desc = 'AI actions' })
 vim.keymap.set({ 'n', 'v' }, '<leader>ac', '<cmd>CodeCompanionChat Toggle<CR>', { desc = 'AI chat (Pi)' })
 vim.keymap.set('v', '<leader>ae', ':CodeCompanion ', { desc = 'AI edit selection (Pi)' })
+
+-- Never show line numbers in CodeCompanion buffers
+vim.api.nvim_create_autocmd('FileType', {
+  pattern = 'codecompanion',
+  callback = function()
+    vim.wo.number = false
+    vim.wo.relativenumber = false
+  end,
+})

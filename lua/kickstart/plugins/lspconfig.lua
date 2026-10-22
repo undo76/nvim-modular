@@ -126,9 +126,7 @@ local servers = {
   },
 
   ruff = {
-    on_attach = function(client) 
-      client.server_capabilities.hoverProvider = false 
-    end,
+    on_attach = function(client) client.server_capabilities.hoverProvider = false end,
   },
 
   -- Special Lua Config, as recommended by neovim help docs

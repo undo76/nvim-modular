@@ -74,7 +74,7 @@ vim.opt.listchars = { tab = '» ', trail = '·', nbsp = '␣' }
 vim.o.inccommand = 'nosplit'
 
 -- Show which line your cursor is on
-vim.o.cursorline = false
+vim.o.cursorline = true
 
 -- Minimal number of screen lines to keep above and below the cursor.
 vim.o.scrolloff = 10
